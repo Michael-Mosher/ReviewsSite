@@ -18,9 +18,9 @@
 					</thead>
 					<tbody>
 						<tr class="review-entry" th:each="review:${reviews}">
-							<td><a th:href="@{/review(reviewId=${review.getId()})}" ><img th:src="/images/${review.getImageUrl()}"></img></a></td>
-							<td><a th:href="@{/review(reviewId=${review.getId()})}" th:text="${review.getTitle()}"></a></td>
-							<td><a th:href="@{/review(reviewId=${review.getId()})}" th:text="${review.getCategory()}"></a></td>
+							<td><a th:href="@{/review(reviewId=${review.id})}" ><img th:src="@{'/images/' + ${review.imageUrl}}"></img></a></td>
+							<td><a th:href="@{/review(reviewId=${review.id})}" th:text="${review.title}"></a></td>
+							<td><a th:href="@{/review(reviewId=${review.id})}" th:text="${review.category}"></a></td>
 						</tr>
 			</div>
 		</div>
