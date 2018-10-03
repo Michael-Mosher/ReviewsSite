@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text="${review.getTitle()}"></title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1 th:text="${review.getTitle()}"></h1>
+			</div>
+			<div id="main">
+				<table id="reviews">
+					<tr class="review-caption">
+						<td th:image="/images/${review.getImageUrl()}"></td>
+						<td colspan="2" th:text="${review.getTitle()}">
+						</td>
+						<td th:text="${review.getCategory()}"></td>
+					</tr>
+					<tr class="review-body">
+						<td colspan="4" th:text="${review.getContent()}"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
+
