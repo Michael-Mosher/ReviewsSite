@@ -18,14 +18,15 @@ class ReviewRepository {
 	this.reviews.put(103L, new Review(103L, "The Elder Scrolls V: Skyrim", "skyrim.jpg", "Adventure", "Klappspaten: This game is the love of my life and i'm not ashamed of it.\n*installs bouncy boobs mod*"));
   }
   
-  public Review getEntry(long sEntryId)
+  public Review getEntry(long lReviewId)
   {
-    if(this.reviews.containsKey(new Long(sEntryId))) {
-	  Review answer = this.reviews.get(new Long(sEntryId));
-	  return answer;
-	} else {
-	  return new Review(0,"", "", "", "");
-    }
+	  return this.reviews.get(lReviewId);
+//    if(this.reviews.containsKey(new Long(sEntryId))) {
+//	  Review answer = this.reviews.get(new Long(sEntryId));
+//	  return answer;
+//	} else {
+//	  return new Review(0,"", "", "", "");
+//    }
   }
   
   public Collection<Review> getAllEntries()
