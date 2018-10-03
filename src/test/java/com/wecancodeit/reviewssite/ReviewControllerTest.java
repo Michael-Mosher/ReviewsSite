@@ -57,6 +57,7 @@ public class ReviewControllerTest {
   @Test
   public void shouldRouteToSingleCourseView() throws Exception
   {
+	when(repository.getEntry(100)).thenReturn(firstReview);
 	mvc.perform(get("/review?reviewId=100")).andExpect(view().name(is("review")));
   }
   
@@ -70,7 +71,7 @@ public class ReviewControllerTest {
   @Test
   public void shouldNotPutSingleCourseIntoModel() throws Exception
   {
-	when(repository.getEntry(500L)).thenReturn(null);
+	when(repository.getEntry(500L)).thenReturn(new Review(0,"","","",""));
     mvc.perform(get("/review?reviewId=500")).andExpect(model().attribute("reivew", is(nullValue())));
   }
 }
